@@ -32,12 +32,7 @@
 // 7, 55, 4, 16, true => "Alive!";
 // 24, 0, 4, 8, true => "Shark Bait!";
 
-function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin){
-
-    sharkSpeed = dolphin? sharkSpeed/2: sharkSpeed;
-
-    return pontoonDistance/youSpeed < sharkDistance/sharkSpeed ? 'Alive!': "Shark Bait!";
-}
+const shark = (pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) => pontoonDistance/youSpeed < sharkDistance/(dolphin? sharkSpeed/2: sharkSpeed) ? 'Alive!': "Shark Bait!";
 
 const result = shark(24, 0, 4, 8, true);
 
