@@ -13,23 +13,34 @@
 
 function dup(s) {
 
-    const noDup = [];
-    for ( let i = 0; i < s.length; i++ ){
+    // const noDup = [];
+    // for ( let i = 0; i < s.length; i++ ){
+    //     let previousLetter = '';
+    //     let noDupStr = '';
+    //     for ( let j = 0; j < s[i].length; j++ ){
+    //         const currentLetter = s[i][j]
+    //         if ( previousLetter !== currentLetter ){
+    //             noDupStr += currentLetter;
+    //             previousLetter = currentLetter;
+    //         }
+    //     }
+    //     noDup.push(noDupStr);
+    // }
+
+    return s.map(string => {
         let previousLetter = '';
         let noDupStr = '';
-        for ( let j = 0; j < s[i].length; j++ ){
-            const currentLetter = s[i][j]
-            if ( previousLetter !== currentLetter ){
+        for (let j = 0; j < string.length; j++) {
+            const currentLetter = string[j];
+            if (previousLetter !== currentLetter) {
                 noDupStr += currentLetter;
                 previousLetter = currentLetter;
             }
         }
-        noDup.push(noDupStr);
-    }
-
-    return noDup;
+        return noDupStr;
+    })
 };
 
-const result = dup(["abracadabra","allottee","assessee"]);
+const result = dup(["abracadabra", "allottee", "assessee"]);
 
 console.log(result);
